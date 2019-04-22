@@ -20,7 +20,7 @@ namespace CrmUi
 
         public Main()
         {
-            InitializeComponent();
+            InitializeComponent(); // иницализация формы
             db = new CrmContext(); // создаем конкретный обьект
         }
 
@@ -33,7 +33,29 @@ namespace CrmUi
         //обьект меню
         private void СущностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogProduct = new Catalog();
+            var catalogProduct = new Catalog<Product>(db.Products); //загружаем данные из БД
+            catalogProduct.Show();
+        }
+
+        private void SellerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+                var catalogSeller = new Catalog<Seller>(db.Sellers); //загружаем данные из БД
+                catalogSeller.Show();
+           
+            
+        }
+
+        private void CustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var catalogCustomer = new Catalog<Customer>(db.Customers); //загружаем данные из БД
+            catalogCustomer.Show();
+        }
+
+        private void CheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var catalogCheck = new Catalog<Check>(db.Checks); //загружаем данные из БД
+            catalogCheck.Show();
         }
     }
 }

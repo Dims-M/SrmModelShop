@@ -11,17 +11,14 @@ using System.Windows.Forms;
 
 namespace CrmUi
 {
-    public partial class Catalog : Form
+    public partial class Catalog<T> : Form where T : class
     {
-        public Catalog()
+        
+        //Конструктор. При загрузке формы выводим необходиммые данные
+        public Catalog(DbSet<T> set)
         {
             InitializeComponent();
-        }
-
-        //Конструктор. При загрузке формы выводим необходиммые данные
-        public Catalog(DbSet db)
-        {
-           // dataGridView.DataBindings = db.Local.ToBindingList()
+            dataGridView.DataSource = set.Local.ToBindingList();
         }
 
         private void Catalog_Load(object sender, EventArgs e)

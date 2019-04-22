@@ -1,6 +1,6 @@
 ﻿namespace CrmUi
 {
-    partial class Catalog
+    partial class Catalog<T>
     {
         /// <summary>
         /// Required designer variable.
@@ -41,14 +41,14 @@
             this.dataGridView.Location = new System.Drawing.Point(12, 12);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(445, 369);
+            this.dataGridView.Size = new System.Drawing.Size(786, 369);
             this.dataGridView.TabIndex = 0;
             // 
             // Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 393);
+            this.ClientSize = new System.Drawing.Size(810, 393);
             this.Controls.Add(this.dataGridView);
             this.Name = "Catalog";
             this.Text = "Catalog";
