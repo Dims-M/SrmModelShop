@@ -18,8 +18,20 @@ namespace WindowsService1
             ServicesToRun = new ServiceBase[]
             {
                 new Service1()
-            };
-            ServiceBase.Run(ServicesToRun);
+             };
+
+             ServiceBase.Run(ServicesToRun);
+
+            //if (Environment.UserInteractive)
+            //{
+            //    Service1 service1 = new Service1();
+            //    service1.TestStartupAndStop(ServicesToRun);
+            //}
+            //else
+            //{
+            //    Put the body of your old Main method here.
+            //}
         }
     }
 }
+
