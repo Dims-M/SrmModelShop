@@ -32,12 +32,12 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produktToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SellerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SellerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SellerAddToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerAddToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkAddToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,12 @@
             this.produktToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.produktToolStripMenuItem.Text = "Товар";
             // 
+            // productddToolStripMenuItem
+            // 
+            this.productddToolStripMenuItem.Name = "productddToolStripMenuItem";
+            this.productddToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.productddToolStripMenuItem.Text = "Добавить";
+            // 
             // SellerToolStripMenuItem
             // 
             this.SellerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -90,6 +96,12 @@
             this.SellerToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.SellerToolStripMenuItem.Text = "Продавец";
             this.SellerToolStripMenuItem.Click += new System.EventHandler(this.SellerToolStripMenuItem_Click);
+            // 
+            // SellerAddToolStripMenuItem1
+            // 
+            this.SellerAddToolStripMenuItem1.Name = "SellerAddToolStripMenuItem1";
+            this.SellerAddToolStripMenuItem1.Size = new System.Drawing.Size(151, 26);
+            this.SellerAddToolStripMenuItem1.Text = "Добавить";
             // 
             // customerToolStripMenuItem
             // 
@@ -100,6 +112,13 @@
             this.customerToolStripMenuItem.Text = "Покупатель";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.CustomerToolStripMenuItem_Click);
             // 
+            // customerAddToolStripMenuItem2
+            // 
+            this.customerAddToolStripMenuItem2.Name = "customerAddToolStripMenuItem2";
+            this.customerAddToolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
+            this.customerAddToolStripMenuItem2.Text = "Добавить";
+            this.customerAddToolStripMenuItem2.Click += new System.EventHandler(this.CustomerAddToolStripMenuItem2_Click);
+            // 
             // checkToolStripMenuItem
             // 
             this.checkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -109,28 +128,10 @@
             this.checkToolStripMenuItem.Text = "Чек";
             this.checkToolStripMenuItem.Click += new System.EventHandler(this.CheckToolStripMenuItem_Click);
             // 
-            // productddToolStripMenuItem
-            // 
-            this.productddToolStripMenuItem.Name = "productddToolStripMenuItem";
-            this.productddToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.productddToolStripMenuItem.Text = "Добавить";
-            // 
-            // SellerAddToolStripMenuItem1
-            // 
-            this.SellerAddToolStripMenuItem1.Name = "SellerAddToolStripMenuItem1";
-            this.SellerAddToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
-            this.SellerAddToolStripMenuItem1.Text = "Добавить";
-            // 
-            // customerAddToolStripMenuItem2
-            // 
-            this.customerAddToolStripMenuItem2.Name = "customerAddToolStripMenuItem2";
-            this.customerAddToolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
-            this.customerAddToolStripMenuItem2.Text = "Добавить";
-            // 
             // checkAddToolStripMenuItem3
             // 
             this.checkAddToolStripMenuItem3.Name = "checkAddToolStripMenuItem3";
-            this.checkAddToolStripMenuItem3.Size = new System.Drawing.Size(216, 26);
+            this.checkAddToolStripMenuItem3.Size = new System.Drawing.Size(151, 26);
             this.checkAddToolStripMenuItem3.Text = "Добавить";
             // 
             // Main
