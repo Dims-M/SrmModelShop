@@ -42,7 +42,7 @@ namespace WindowsService1
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.StartType = ServiceStartMode.Manual; //указывает когда служба будет запущена Manual вручную
+            this.serviceInstaller1.StartType = ServiceStartMode.Automatic; //Manual; //указывает когда служба будет запущена Manual вручную
             this.serviceInstaller1.Description = "Эпическая Хрень полная"; //Описание которое будет видно в списке служб
             this.serviceInstaller1.DisplayName = "Хрень полная"; //Название службы которое будет видно в списке служб
             this.serviceInstaller1.ServiceName = "Service1"; //имя службы
