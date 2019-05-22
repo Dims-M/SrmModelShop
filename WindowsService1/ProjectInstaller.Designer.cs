@@ -37,16 +37,16 @@
             this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalSystem; //Чтоб не запрашивало имя пользователя и пароль
             this.serviceProcessInstaller1.Password = null;
             this.serviceProcessInstaller1.Username = null;
-            
+
             // 
             // serviceInstaller1
             // 
+            this.serviceInstaller1.Description = "Тестовая служба ."; //Описание которое будет видно в списке служб
+            this.serviceInstaller1.DisplayName = "GetSystemErrorККМ_"; //Название службы которое будет видно в списке служб
             this.serviceInstaller1.ServiceName = "GetSystemError";
             // 
             // ProjectInstaller
             // 
-            this.serviceInstaller1.Description = "Тестовая служба ."; //Описание которое будет видно в списке служб
-            this.serviceInstaller1.DisplayName = "GetSystemErrorККМ_"; //Название службы которое будет видно в списке служб
             this.Installers.AddRange(new System.Configuration.Install.Installer[] {
             this.serviceProcessInstaller1,
             this.serviceInstaller1});
