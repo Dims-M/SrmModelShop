@@ -31,25 +31,29 @@ namespace WFormsApp_GodeBloc
             fptr.setSettings(settings);
         }
 
-        public string ghty()
+        //открытие и проверка подключения
+        public string OpenKKTDrav()
          {
             IFptr fptr = new Fptr(); // инициал др
             fptr.open(); // открытие файла.
 
             string temp = "";
-
-            bool isOpened = fptr.isOpened();
-
-            
+            bool isOpened = fptr.isOpened(); // проверка подключения
 
             if (isOpened == true)
             {
                 temp = "Проверка состояния логического соединения Завершена успешно";
             }
 
+
+
             return temp;
 
         }
 
+        public void ZaprosInfu()
+        {
+            queryData()
+        }
     }
 }
