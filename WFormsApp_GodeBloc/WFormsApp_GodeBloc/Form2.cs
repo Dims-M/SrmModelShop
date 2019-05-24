@@ -20,7 +20,8 @@ namespace WFormsApp_GodeBloc
 
         private void Label1_Click(object sender, EventArgs e)
         {
-
+            kkt kkt1 = new kkt();
+            label1.Text = kkt1.GetVercionKKT();
         }
 
         //Кнопка открыть лог
@@ -29,7 +30,7 @@ namespace WFormsApp_GodeBloc
             label1.Text = ReaderLogFile();
         }
 
-
+        //Прочитает из файла лога
         public string ReaderLogFile()
         {
             string pathLog = @"Log.text";

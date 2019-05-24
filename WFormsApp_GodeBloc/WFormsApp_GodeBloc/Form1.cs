@@ -210,7 +210,7 @@ namespace WFormsApp_GodeBloc
             return 0;
         }
 
-        
+        //Тестовой метод запускатор
         public void JobMethtodLink()
         {
 
@@ -247,11 +247,20 @@ namespace WFormsApp_GodeBloc
         //кнопка получения
         private void Button4_Click(object sender, EventArgs e)
         {
-             label2.Text = GettingDataInt(GetTextBlocToInt()); // нужное значение, нужный лист 
+            // label2.Text = GettingDataInt(GetTextBlocToInt()); // нужное значение, нужный лист 
 
-           FeadingTextFileAndList(); // прочитать и заполнить в лист данные из файла
+            //  FeadingTextFileAndList(); // прочитать и заполнить в лист данные из файла
+
+            kkt kkt1 = new kkt();
+            label1.Text = kkt1.GetVercionKKT();
+            label1.Text += kkt1.ghty();
+
 
         }
+
+
+
+
 
         //поле ввода Текст блок
         private void TextBox1_TextChanged(object sender, EventArgs e)
