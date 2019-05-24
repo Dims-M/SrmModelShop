@@ -33,13 +33,20 @@ namespace WFormsApp_GodeBloc
         public string ReaderLogFile()
         {
             string pathLog = @"Log.text";
-            string text;
+            string text="";
 
-            using (StreamReader streamReader = new StreamReader(pathLog, System.Text.Encoding.Default))
+            if (File.Exists(pathLog))
             {
-                text = streamReader.ReadToEnd(); // прочитать весь файл
+                using (StreamReader streamReader = new StreamReader(pathLog, System.Text.Encoding.Default))
+                {
+                    text = streamReader.ReadToEnd(); // прочитать весь файл
+                }
             }
 
+            else
+            {
+                text = "Ошибка";
+            }
             return text;
         }
 
@@ -54,6 +61,12 @@ namespace WFormsApp_GodeBloc
         private void Button3_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            string pathLog = @"Log.text";
+            File.Delete(pathLog);
         }
     }
 }

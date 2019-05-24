@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WFormsApp_GodeBloc
 {
-    public partial class Form1 : Form
+    public partial class Form1  : Form
     {
         public Form1()
         {
@@ -19,6 +19,8 @@ namespace WFormsApp_GodeBloc
         }
 
         private static List<int> CollectionChangeAction = new List<int>();
+
+        string tempListJornal = "";
 
 
         //Кнопка выход
@@ -64,18 +66,22 @@ namespace WFormsApp_GodeBloc
         /// </summary>
         /// <param name="tsList"></param>
         /// <returns></returns>
-        public List<int> ZapolnenieLista( int contList =10)
+        public List<int> ZapolnenieLista( int contList =30)
         {
             Random random = new Random();
             int tempCount;
+            tempListJornal="";
 
             for (int i=0; i< contList; i++)
             {
                 tempCount = random.Next(100);
+                tempListJornal += tempCount;
+                tempListJornal += "\t\n";
+
                 CollectionChangeAction.Add(tempCount);
             }
-            
 
+            SaveLogFail("List", tempListJornal );
             return CollectionChangeAction;
         }
 
@@ -101,6 +107,31 @@ namespace WFormsApp_GodeBloc
             return stringBu;
         }
 
+        //Чтение и заполнение массива из файла
+        public List<string> FeadingTextFileAndList()
+        {
+            string tempFile = ReaderLogFile("List.text");
+            string[] failList = new string[tempListJornal.Length+1];
+
+            string ttt = "";
+
+            List<string> list2 = new List<string>();
+
+            foreach (var s in failList)
+            {
+                //  failList = tempFile.Split(' ');
+                list2.AddRange(tempFile.Split(' '));
+            }
+
+            foreach(var i in list2)
+            {
+                ttt += i;
+                ttt += "\t\n";
+            }
+            label1.Text = ttt;
+            return list2;
+        }
+
         //запись в файл 
         public void SaveLogFail(string logText)
         {
@@ -109,14 +140,31 @@ namespace WFormsApp_GodeBloc
             using (StreamWriter streamWriter = new StreamWriter(pathLog, true, System.Text.Encoding.Default))
             {
                 streamWriter.Write(logText);
-
             }
-
         }
 
-        public string ReaderLogFile()
+        /// <summary>
+        /// Сохранение в файл с передачей имени файла, и пути
+        /// </summary>
+        /// <param name="nameList">ИМя файла</param>
+        /// <param name="logText">Путь к файлу</param>
+        public void SaveLogFail(string nameList ,string logText)
         {
-            string pathLog = @"Log.text";
+            string pathLog = $"{nameList}.text";
+
+            using (StreamWriter streamWriter = new StreamWriter(pathLog, true, System.Text.Encoding.Default))
+            {
+                streamWriter.Write(logText);
+            }
+        }
+
+        /// <summary>
+        /// Прочитать лог из текстового файла
+        /// </summary>
+        /// <returns></returns>
+        public string ReaderLogFile(string pathLogF = @"Log.text")
+        {
+            string pathLog = pathLogF;
             string text;
 
             using (StreamReader streamReader = new StreamReader(pathLog, System.Text.Encoding.Default))
@@ -127,14 +175,46 @@ namespace WFormsApp_GodeBloc
             return text;
         }
 
-        /// <summary>
-        /// Тестовой метод запуска
-        /// </summary>
+        //Получения их колекции нужных данных 
+            public string GettingDataInt(int dateCount)
+        {
+            var strTempData = from item in CollectionChangeAction
+                              where item  < dateCount
+                              select item;
+
+            string temp="пппп";
+
+            foreach (var hren in strTempData)
+            {
+                temp += hren.ToString();
+                temp += "\t\n";
+                label2.Text += hren.ToString();
+            }
+            return temp;
+        }
+
+        //получение интовых данных из текст блока
+        public int GetTextBlocToInt()
+        {
+            try
+             {
+                var tempZnach = int.Parse(textBox1.Text);
+                return tempZnach;
+            }
+
+            catch (Exception ex)
+            {
+                
+            }
+
+            return 0;
+        }
+
+        
         public void JobMethtodLink()
         {
 
             ZapolnenieLista(); // заполнение листа
-
             label1.Text= ShouList(CollectionChangeAction);
 
         }
@@ -163,6 +243,28 @@ namespace WFormsApp_GodeBloc
             label1.Text = tempItemList;
 
         }
-         
+
+        //кнопка получения
+        private void Button4_Click(object sender, EventArgs e)
+        {
+             label2.Text = GettingDataInt(GetTextBlocToInt()); // нужное значение, нужный лист 
+
+           FeadingTextFileAndList(); // прочитать и заполнить в лист данные из файла
+
+        }
+
+        //поле ввода Текст блок
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //Кнопка очистить
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = " ";
+            label1.Text = " ";
+            label2.Text = " ";
+        }
     }
 }
