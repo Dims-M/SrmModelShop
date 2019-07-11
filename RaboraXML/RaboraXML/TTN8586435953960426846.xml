@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Documents>
+  <Owner>
+    <FSRAR_ID>030000169649</FSRAR_ID>
+  </Owner>
+  <Document>
+    <WayBill_v3>
+      <Identity>TTN--8586435953960426846</Identity>
+      <Header>
+        <NUMBER>TTN--8586435953960426846</NUMBER>
+        <Date>2019-05-16</Date>
+        <ShippingDate>2019-05-16</ShippingDate>
+        <Type>WBInvoiceFromMe</Type>
+        <Shipper>
+          <UL>
+            <INN>1660243548</INN>
+            <KPP>166001001</KPP>
+            <ClientRegId>030000169649</ClientRegId>
+            <FullName>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "СМОКИНГ"</FullName>
+            <ShortName>ООО "СМОКИНГ"</ShortName>
+            <address>
+              <Country>643</Country>
+              <RegionCode>16</RegionCode>
+              <description>Россия, 420140,ТАТАРСТАН Респ,МИНСКАЯ ул,КАЗАНЬ г,36 ,2</description>
+            </address>
+          </UL>
+        </Shipper>
+        <Consignee>
+          <UL>
+            <INN>1655376687</INN>
+            <KPP>165945001</KPP>
+            <ClientRegId>030000307073</ClientRegId>
+            <FullName>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "БИРХОП"</FullName>
+            <ShortName>ООО "БИРХОП"</ShortName>
+            <address>
+              <Country>643</Country>
+              <RegionCode>16</RegionCode>
+              <description>420054,РОССИЯ,,,КАЗАНЬ Г,,КРУТОВСКАЯ УЛ,26,,</description>
+            </address>
+          </UL>
+        </Consignee>
+        <Transport>
+          <TRAN_TYPE />
+          <TRAN_CAR />
+          <TRAN_TRAILER />
+          <TRAN_CUSTOMER />
+          <TRAN_DRIVER />
+          <TRAN_LOADPOINT />
+          <TRAN_UNLOADPOINT />
+          <TRAN_REDIRECT />
+          <TRAN_FORWARDER />
+        </Transport>
+        <Base />
+        <Note>2019-05-16</Note>
+        <VarField1 />
+        <VarField2 />
+        <VarField3 />
+      </Header>
+      <Content>
+        <Position>
+          <Identity>1</Identity>
+          <Product>
+            <Type>АП</Type>
+            <FullName>Пуаре "Грушевый сидр" полусладкий игристый жемчужный</FullName>
+            <ShortName>-</ShortName>
+            <AlcCode>0000000000023676160</AlcCode>
+            <Capacity>0.75</Capacity>
+            <AlcVolume>4.5</AlcVolume>
+            <ProductVCode>262</ProductVCode>
+            <UnitType>Packed</UnitType>
+            <Producer>
+              <UL>
+                <INN>7810131519</INN>
+                <KPP>784032001</KPP>
+                <ClientRegId>030000058420</ClientRegId>
+                <FullName>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "МЕДОВАРУС"</FullName>
+                <ShortName>ООО "МЕДОВАРУС"</ShortName>
+                <address>
+                  <Country>643</Country>
+                  <RegionCode>78</RegionCode>
+                  <description>191186, РОССИЯ, САНКТ-ПЕТЕРБУРГ Г, , , , УЛ КАЗАНСКАЯ, 7, Л.В,</description>
+                </address>
+              </UL>
+            </Producer>
+          </Product>
+          <Quantity>4</Quantity>
+          <Price>153.56</Price>
+          <FARegId>FA-000000042659805</FARegId>
+          <InformF2>
+            <F2RegId>FB-000002292990284</F2RegId>
+          </InformF2>
+        </Position>
+      </Content>
+    </WayBill_v3>
+  </Document>
+</Documents>
