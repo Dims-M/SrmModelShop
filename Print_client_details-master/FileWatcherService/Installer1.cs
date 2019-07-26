@@ -29,7 +29,7 @@ namespace FileWatcherService
             serviceInstaller.ServiceName = "Service1"; // имя службы
             serviceInstaller.StartType = ServiceStartMode.Automatic; //пределяет, как должна запускаться служба - автоматически или вручную
             serviceInstaller.DelayedAutoStart = true; // определяет, должна ли служба запускаться не сразу после загрузки операционной системы, а немного позже
-            serviceInstaller.ServiceName = "Странная хрень"; //устанавливает имя службы, которое будет отображаться в различных утилитах управления службами
+            serviceInstaller.ServiceName = "Странная хрень2"; //устанавливает имя службы, которое будет отображаться в различных утилитах управления службами
 
 
             Installers.Add(processInstaller);

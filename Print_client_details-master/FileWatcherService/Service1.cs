@@ -118,7 +118,7 @@ namespace FileWatcherService
         {
             lock (obj) //Чтобы не было гонки ресурсов за файл templog.txt, в который вносятся записи об изменениях, процедура записи блокируется заглушкой lock(obj).
             {
-                using (StreamWriter writer = new StreamWriter("templog.txt", true)) //лог событи. Куда записываем изменния
+                using (StreamWriter writer = new StreamWriter("C:\\Users\\Dim\\Documents\\templog.txt", true)) //лог событи. Куда записываем изменния
                 {
                     writer.WriteLine(String.Format("{0} файл {1} был {2}",
                         DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss"), filePath, fileEvent));
@@ -134,6 +134,12 @@ namespace FileWatcherService
         {
             // C: \Users\Dim\source\repos\Print_client_details - master\FileWatcherService\bin\Debug > C:\Users\Dim\source\repos\Print_client_details - master\FileWatcherService\bin\Debug\InstallUtil.exe C:\Users\Dim\source\repos\Print_client_details - master\FileWatcherService\bin\Debug\FileWatcherService.exe
 
+        }
+
+        protected void UnistalMyServis()
+        {
+            //C:\Windows\Microsoft.NET\Framework64\v4.0.30319>InstallUtil.exe /u  
+            //https://metanit.com/sharp/tutorial/21.2.php
         }
 
     }
