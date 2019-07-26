@@ -18,6 +18,10 @@ namespace ConsoleApp2
 {
     class Program
     {
+        //Источник
+        //https://developers.google.com/sheets/api/quickstart/dotnet
+        //Install-Package Google.Apis.Sheets.v4
+
         // При изменении этих областей удалите ранее сохраненные учетные данные
         // at ~/.credentials/sheets.googleapis.com-dotnet-quickstart.json
         static string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
