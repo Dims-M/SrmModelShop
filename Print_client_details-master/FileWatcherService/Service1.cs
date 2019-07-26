@@ -18,10 +18,10 @@ namespace FileWatcherService
 
         public Service1()
         {
-            logger = new Logger(); // инициализируем класс логер
-            Thread loggerThread = new Thread(new ThreadStart(logger.Start)); //создаем поток для логера
-            loggerThread.Start(); //запуск потока
             InitializeComponent();
+            this.CanStop = true; // службу можно остановить
+            this.CanPauseAndContinue = true; // службу можно приостановить и затем продолжить
+            this.AutoLog = true; // служба может вести запись в лог
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace FileWatcherService
         bool enabled = true; 
         public Logger()
         {
-            watcher = new FileSystemWatcher("D:\\диск С"); // место которое прошлушивается
+            watcher = new FileSystemWatcher("C:\\Users\\Dim\\Downloads"); // место которое прошлушивается
             watcher.Deleted += Watcher_Deleted;
             watcher.Created += Watcher_Created;
             watcher.Changed += Watcher_Changed;
@@ -116,15 +116,24 @@ namespace FileWatcherService
         //Запись события или изменения файла.
         private void RecordEntry(string fileEvent, string filePath)
         {
-            lock (obj)
+            lock (obj) //Чтобы не было гонки ресурсов за файл templog.txt, в который вносятся записи об изменениях, процедура записи блокируется заглушкой lock(obj).
             {
-                using (StreamWriter writer = new StreamWriter("D:\\templog.txt", true))
+                using (StreamWriter writer = new StreamWriter("templog.txt", true)) //лог событи. Куда записываем изменния
                 {
                     writer.WriteLine(String.Format("{0} файл {1} был {2}",
                         DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss"), filePath, fileEvent));
                     writer.Flush(); // очистка буфера 
                 }
             }
+        }
+
+        /// <summary>
+        /// Установка службы
+        /// </summary>
+        protected void Zapoosk()
+        {
+            // C: \Users\Dim\source\repos\Print_client_details - master\FileWatcherService\bin\Debug > C:\Users\Dim\source\repos\Print_client_details - master\FileWatcherService\bin\Debug\InstallUtil.exe C:\Users\Dim\source\repos\Print_client_details - master\FileWatcherService\bin\Debug\FileWatcherService.exe
+
         }
 
     }
